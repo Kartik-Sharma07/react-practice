@@ -1,0 +1,25 @@
+{
+  "name": "react-practice",
+  "version": "1.0.0",
+  "description": "This is a practice react project",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kartik-Sharma07/react-practice.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Kartik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kartik-Sharma07/react-practice/issues"
+  },
+  "homepage": "https://github.com/Kartik-Sharma07/react-practice#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
