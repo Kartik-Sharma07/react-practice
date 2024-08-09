@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RESTAURANT_CARDS_API_URL } from "../utils/constant";
+import useOnlineStatus from "../utils/useOnlineStatus";
 // import restaurant_data from "../utils/mock_data"; (NOT REQUIRED AS WE ARE NOW FETCHING THE DATA FROM SWIGGY'S API) 
 
 const Body = () => {
@@ -23,6 +24,14 @@ const Body = () => {
         fetchData();
     }, []);
     
+    const onlineStatus = useOnlineStatus();
+
+    if(onlineStatus === false){
+        return (<h1>
+            Looks like you are offline!! Please check your internet connection
+        </h1>);
+    }
+
     return (restaurant_details.length === 0) ? (<Shimmer/>) :  (
         <div className="body">
             <input type="text" value={searchtext} onChange={(e) => {
