@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { APP_LOGO_URL } from "../utils/constant";
 import { useState } from "react";
 
@@ -10,9 +11,9 @@ const Header = () => {
             </div>
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
+                    <Link to="/"><li>Home</li></Link>
+                    <Link to="/about"><li>About us</li></Link>
+                    <Link to="/contact"><li>Contact us</li></Link>
                     <li>Cart</li>
                     <button onClick={() => {
                         setBtnText((btnText === "login") ? "logout" : "login") 

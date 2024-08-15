@@ -24,8 +24,13 @@ img{
     margin: 16px;
 }
 
-.nav-items > ul > li{
+.nav-items > ul > li, .nav-items > ul > a > li{
     padding: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 .restaurant-card-container{
@@ -72,3 +77,33 @@ img{
 button, input{
     margin: 5px;
 }
+
+.category-card{
+    background-color: #f0f0f0;
+    margin-bottom: 16px;
+    padding: 10px;
+}
+
+.category-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.category-name-img-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-name{
+    width: 50%;
+}
+
+.category-img{
+    width: 40%;
+}
+
+/*@tailwind base;
+@tailwind components;
+@tailwind utilities;*/

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {vegLable} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RESTAURANT_CARDS_API_URL } from "../utils/constant";
@@ -25,10 +25,12 @@ const Body = () => {
     }, []);
     
     const onlineStatus = useOnlineStatus();
+    
+    const RestaurantCardVeg = vegLable(RestaurantCard); 
 
     if(onlineStatus === false){
         return (<h1>
-            Looks like you are offline!! Please check your internet connection
+            Looks like you are offline!! Please check your internet connection and try again
         </h1>);
     }
 
@@ -50,7 +52,10 @@ const Body = () => {
             }}>Top restaurants</button>
             <div className="restaurant-card-container">
                 {filterdRestaurants.map((restaurant_obj,index) => (
-                    <Link key={restaurant_obj.info.id} to={"/restaurant/" + restaurant_obj.info.id}><RestaurantCard restaurant_obj={restaurant_obj}/></Link>
+                    <Link key={restaurant_obj.info.id} to={"/restaurant/" + restaurant_obj.info.id}>
+                        {console.log(restaurant_obj.info?.veg)}
+                        {(restaurant_obj.info.veg) ? <RestaurantCardVeg restaurant_obj={restaurant_obj}/> : <RestaurantCard restaurant_obj={restaurant_obj}/>}
+                    </Link>
                 ))}
             </div>
         </div>
