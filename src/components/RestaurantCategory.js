@@ -5,8 +5,6 @@ const RestaurantCategory = ({category, setShowItems, showItems, index}) => {
     const name = category?.card?.card?.title;
     const items = category?.card?.card?.itemCards;
 
-    console.log(setShowItems, showItems, index);
-
     /*const [showItems, setShowItems] = useState(false);*/
 
     const handleClick = () => {

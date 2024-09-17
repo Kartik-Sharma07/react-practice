@@ -104,6 +104,9 @@ button, input{
     width: 40%;
 }
 
+.category-add-button{
+    position: absolute;
+}
 /*@tailwind base;
 @tailwind components;
 @tailwind utilities;*/
